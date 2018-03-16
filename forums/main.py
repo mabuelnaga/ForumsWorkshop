@@ -14,10 +14,3 @@ member_store.add(member1)
 member_store.add(member2)
 
 print member_store.get_all()
-
-post_store = PostStore()
-
-post_store.add(post1)
-post_store.add(post2)
-
-print post_store.get_all()

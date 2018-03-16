@@ -1,5 +1,6 @@
 class Member:
     def __init__(self, name, age):
+        self.id = 0
         self.name = name
         self.age = age
 
@@ -13,4 +14,4 @@ class Post:
         self.content = content
 
 #    def __str__(self):
-#        return '{} : {}'.format(self.title, self.content) 
+#        return '{} : {}'.format(self.title, self.content)
