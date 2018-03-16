@@ -19,26 +19,36 @@ class MemberStore:
         for member in all_members:
             if member.id == id:
                 result = member
+                break
+        return result
+
+    def get_by_name(self, name):
+        result = []
+        all_members = self.get_all()
+        for member in all_members:
+            if member.name == name:
+                result.append(member)
         return result
 
     def entity_exists(self, member):
-        result = False
-        if self.get_by_id(member.id):
-            result = True
+        result = True
+        if self.get_by_id(member.id) is None:
+            result = False
         return result
 
     def delete(self, id):
         member = self.get_by_id(id)
         MemberStore.members.remove(member)
 
+    def update(self, member):
+        all_members = self.get_all()
+        for index, current_member in enumerate(all_members):
+            if current_member.id == member.id:
+                all_members[index] = member
 
 
 
-
-
-
-
-
+#####################################
 class PostStore:
 
     posts = []
